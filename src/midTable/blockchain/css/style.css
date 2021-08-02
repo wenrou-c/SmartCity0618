@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+        url('iconfont.woff') format('woff'),
+        url('iconfont.ttf') format('truetype'),
+        url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 46px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "微软雅黑";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: #fff;
+    --c1: #021825;
+    /* 边框阴影颜色 */
+    --boxShadow: #197786;
+    /* 字体颜色 */
+    --fontColor: #01DAE2;
+    /* 说明文字颜色 */
+    --secMess: #00ACB6;
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+button {
+    outline: none !important;
+}
+
+
+/* common */
+.flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-sc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-ec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-st {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* warp  */
+.warp {
+    min-width: 1000px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c1);
+
+}
+
+.main {
+    width: 100%;
+    height: 97vh;
+
+}
+
+/* index */
+.secLeft,
+.secRight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 24%;
+    height: 100%;
+}
+
+.secMid {
+    width: 50%;
+    height: 97%;
+    box-shadow: 0px 0px 40px var(--boxShadow) inset;
+}
+
+.dialBlock {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-shadow: 0 0 20px var(--c2) inset;
+    border-radius: 5px;
+}
+
+.dialBlock .top {
+    width: 100%;
+    height: 40px;
+}
+
+.secSpan {
+    width: 90%;
+    height: 47%;
+    text-align: center;
+    border: 1px solid var(--fontColor);
+    border-top: 3px solid var(--fontColor);
+    box-shadow: 0px 0px 40px var(--boxShadow) inset;
+}
+
+.secTIt {
+    font-size: 1.5vw;
+}
+
+.secIco {
+    font-size: 3.8vw;
+    background: linear-gradient(to bottom, #02FDFF, #009FFB);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.secMess {
+    font-size: .8vw;
+    padding: 5%;
+    margin-bottom: 6%;
+    color: var(--secMess);
+}
+
+.secLayout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin: 1vw auto;
+}
+
+.secLayout img {
+    width: 80%;
+}
+
+.chargeSystem {
+    position: absolute;
+    height: 6rem;
+    right: 5%;
+    bottom: .5vw;
+}
+
+.chargeSystem button {
+    margin-right: 10px;
+}
+
+.btn-info {
+    color: #00ffff;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background: transparent !important;
+}
+
+.btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}
+
+.row {
+    margin: 0;
+}
+
+/* 充电桩分布 */
+.baidumap {
+    height: 306px;
+    border: 1px solid gray;
+
+}
+
+.form-group {
+    margin: 10px -30px 10px 10px;
+}
+
+label {
+    font-weight: 400;
+}
+
+table tr {
+    height: 40px;
+}
+
+table {
+    text-align: center;
+}
+
+/* 车辆列表 */
+.search {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+}
+
+.search img {
+    width: 100%;
+}
+
+.input-group .form-control {
+    border-radius: 4px !important;
+}
+
+.add {
+    height: 40px;
+    line-height: 40px;
+    border: 1px dashed #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.car_list_detail {
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 14px;
+}
+
+.car_img {
+    width: 90px;
+}
+
+.car_img img {
+    width: 100%;
+}
+
+.car_number span,
+.user_name span,
+.start_time span {
+    display: block;
+    margin-top: 10px;
+}
+
+.progress_wrap {
+    height: 60px;
+}
+
+.progress {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.car_info {
+    height: 60px;
+    line-height: 60px;
+}
+
+/* 区块链平台 */
+.transaction {
+    border-bottom: 1px solid #ccc;
+    height: 80px;
+    margin-top: 10px;
+
+}
+
+.infos {
+    display: block;
+    margin-top: 10px;
+}
+
+.infotitle .select {
+    color: #00ffff;
+}
+
+/* scroll  */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: var(--c1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c1);
+    background-clip: padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}

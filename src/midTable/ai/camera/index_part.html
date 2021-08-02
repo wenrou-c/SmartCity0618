@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IwsPlat</title>
+    <!-- 20201125 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="warp" id="warp">
+
+        <!-- 内容 -->
+        <div class="content">
+
+            <!-- 2 -->
+            <div class="main page2">
+                <div class="dialBlock">
+                    <div class="top">
+                        <div class="col-xs-6 left" id="title">部件尺寸测量</div>
+                        <div class="col-xs-6 right flex-ec">
+                            <button class="btn btn-sm btn-info ">返回</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="hCamera row">
+                            <div class="col-xs-4 text_description">
+                                <div class="row ">
+                                    <p>介绍：</p>
+                                    <p class="ainfo">基于HSV色域、二值化、形态学运算提取目标区域，并利用摄像头尺寸与实际尺寸的比例实现尺寸识别。Canny边缘检测是从不同视觉对象中提取有用的结构信息并大大减少要处理的数据量的一种技术，目前已广泛应用于各种计算机视觉系统。</p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p class="picture"><img src="img/size.png" alt=""></p>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-8 flex-cc">
+                                <img id="img1" border="0" src="http://192.168.101.243:5000/video_feed_size">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 库 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+   
+</body>
+
+</html>

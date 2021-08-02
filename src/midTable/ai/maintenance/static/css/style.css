@@ -1,0 +1,317 @@
+html {
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: transparent transparent;
+    scrollbar-track-color: transparent;
+    -ms-scrollbar-track-color: transparent;
+}
+
+body {
+    width: 100%;
+    height: calc(100% - 70px);
+    /* background: url(../images/bg.png) !important; */
+    background-color: #021825 !important;
+    background-size: 100% 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+li{
+    list-style: none;
+    float: left;
+    margin-right: 24px;
+    font-size: 16px;
+}
+ul{
+    float: right;
+    margin-right: 24px;
+}
+header{
+    height: 60px;
+    line-height: 60px;
+    color: #06eefe;
+    padding-left: 20px;
+    border-bottom: 1px solid #1FA9E1;
+    background-color: #1B277D;
+}
+header>label{
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* 预警系统滚动条 */
+.scroll {
+    position: absolute;
+    right: 0;
+    /* top: 20%; */
+    align-content: stretch;
+    overflow: hidden scroll;
+    height: 21vh;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent transparent);
+    border-radius: .2vw;
+    -webkit-border-radius: .2vw;
+    -moz-border-radius: .2vw;
+    -ms-border-radius: .2vw;
+    -o-border-radius: .2vw;
+}
+
+::-webkit-scrollbar {
+    width: .1vw;
+    height: .2vh;
+}
+
+/* 标题颜色 */
+.f1 {
+    color: #06eefe;
+    font-weight: 700;
+    padding-left: .5vw;
+}
+
+.f2 {
+    font-size: 1vw;
+}
+
+/* 边框阴影 */
+.shadow {
+    box-shadow: 0px 0px 20px #3868ac inset;
+}
+.left3 .shadow{
+    cursor: pointer;
+}
+
+@-webkit-keyframes mymove {
+    0% {
+        -webkit-transform: translate(-2px, -50%);
+    }
+
+    50% {
+        -webkit-transform: translate(0, -50%);
+    }
+
+    50% {
+        -webkit-transform: translate(2px, -50%);
+    }
+}
+
+@keyframes mymove {
+    0% {
+        transform: translate(-2px, -50%);
+    }
+
+    50% {
+        transform: translate(0, -50%);
+    }
+
+    50% {
+        transform: translate(2px, -50%);
+    }
+}
+
+/* content */
+
+.content {
+    width: 100%;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    padding: 1vw;
+}
+
+.content1 {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    padding: 1vw;
+}
+
+/* 对角线边框 */
+
+.content .left3 .b2,
+.content .rig_left .b2,
+.content .rig_top .b2,
+.content .rig_bottom .b2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2vw;
+    height: 2vw;
+    border-top: 2px solid #228fbd;
+    border-right: 2px solid #228fbd;
+}
+
+.content .left3 .b3,
+.content .rig_left .b3,
+.content .rig_top .b3,
+.content .rig_bottom .b3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2vw;
+    height: 2vw;
+    border-top: 2px solid #228fbd;
+    border-left: 2px solid #228fbd;
+}
+
+.content .left3 .b4,
+.content .rig_left .b4,
+.content .rig_top .b4,
+.content .rig_bottom .b4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2vw;
+    height: 2vw;
+    border-bottom: 2px solid #228fbd;
+    border-left: 2px solid #228fbd;
+}
+
+.content .left3 .b5,
+.content .rig_left .b5,
+.content .rig_top .b5,
+.content .rig_bottom .b5 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2vw;
+    height: 2vw;
+    border-bottom: 2px solid #228fbd;
+    border-right: 2px solid #228fbd;
+}
+
+
+/* 分析页 */
+.left3 {
+    position: relative;
+    width: 16%;
+    height: 92vh;
+    float: left;
+    padding: .5vw;
+}
+
+.right3 {
+    width: 83%;
+    height: 92vh;
+    float: right;
+}
+
+.right3 .rig_left {
+    position: relative;
+    float: left;
+    width: 49%;
+    height: 100%;
+    padding: .5vw;
+}
+
+.right3 .rig_rig {
+    float: right;
+    width: 49%;
+    height: 100%;
+}
+
+.right3 .rig_rig .rig_top {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    padding: .5vw;
+}
+
+.right3 .rig_rig .rig_bottom {
+    position: relative;
+    width: 100%;
+    height: 58%;
+    margin-top: 2%;
+    padding: .5vw;
+}
+
+.left3 .MaterialMess,
+.left3 .dc1,
+.left3 .punch,
+.left3 .step1 {
+    width: 94%;
+    height: 22%;
+    margin-top: 4%;
+    margin-left: .5vw;
+    text-align: center;
+}
+
+.left3 .MaterialMess {
+    margin-top: 4%;
+}
+
+.left3 .MaterialMess img,
+.left3 .dc1 img,
+.left3 .punch img,
+.left3 .step1 img {
+    width: 50%;
+    height: 50%;
+    /* background-color: #228fbd; */
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+/* .box2_con,
+.box3_con,
+.box4_con {
+    width: 100%;
+    height: 100%;
+    float: left;
+    border: 1px solid #ccc;
+  } */
+.box3_con{
+    height: 90%;
+}
+.box4_con {
+    height: 85%;
+}
+.temperature,
+.speed{
+    width: 100%;
+    height: 35%;
+}
+.speed{
+    margin-top: 8%;
+}
+.temperature{
+    margin-bottom:3%;
+}
+.temperature-t,
+.speed-s{
+    text-align: center;
+    width: 20%;
+    height: 5%;
+    line-height: 5vh;
+    margin: auto;
+    background-color: #023471;
+}
+button {
+    outline: none !important;
+}
+.btn-info{
+    position: absolute;
+    top:5px;
+    right:10px;
+    background:transparent !important;
+}
+.btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}

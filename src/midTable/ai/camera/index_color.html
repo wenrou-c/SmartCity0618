@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IwsPlat</title>
+    <!-- 20201125 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="warp" id="warp">
+        <!-- 内容 -->
+        <div class="content">
+            <!-- 2 -->
+            <div class="main page2">
+                <div class="dialBlock">
+                    <div class="top">
+                        <div class="col-xs-6 left" id="title">颜色识别</div>
+                        <div class="col-xs-6 right flex-ec">
+                            <button class="btn btn-sm btn-info ">返回</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="hCamera row">
+                            <div class="col-xs-4 text_description">
+                                <div class="row ">
+                                    <p>介绍：</p>
+                                    <p class="ainfo">基于OpenCV库，采用HSV色域分割提取目标颜色，并基于一些形状特征来实现颜色识别。相对于RGB空间，HSV空间能够非常直观的表达色彩的明暗，色调，以及鲜艳程度。方便进行颜色之间的对比。opencv中的HSV范围，H是0-180，S是0-255，V是0-255。</p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p class="picture"><img src="img/color.png" alt=""></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-8 flex-cc">
+                                <img id="img1" border="0" src="http://192.168.101.243:5000/video_feed_color">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 库 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+   
+
+</body>
+
+</html>

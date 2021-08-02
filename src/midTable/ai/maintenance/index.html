@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>AI智能制造平台</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script type='text/javascript' src="static/js/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script type='text/javascript' src="static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--<header>
+       <label>AI智能制造实训平台</label>    
+       <ul>
+           <li>首页</li>
+           <li>数据</li>
+           <li>分析</li>
+       </ul>
+    </header>-->
+   
+    <!-- 分析页 -->
+    <div class="content content1" id="analyze">
+        <div class="left3 shadow">
+            <!-- 边框 -->
+            <div class="b2"></div>
+            <div class="b3"></div>
+            <div class="b4"></div>
+            <div class="b5"></div>
+            <p class="f1">设备预测性维护</p>
+            <div class="MaterialMess shadow">
+                <img src="static/images/servo.png" onclick="changeDevice(1)"/>
+                <p class="f1 f2">原料仓电机</p>
+            </div>
+            <div class="dc1 shadow">
+                <img src="static/images/dc.png" onclick="changeDevice(2)"/>
+                <p class="f1 f2">传输带电机</p>
+            </div>
+            <div class="punch shadow">
+                <img src="static/images/punch.png" onclick="changeDevice(3)"/>
+                <p class="f1 f2">冲压工作台</p>
+            </div>
+            <div class="step1 shadow">
+                <img src="static/images/step.png" onclick="changeDevice(4)"/>
+                <p class="f1 f2">成品仓电机</p>
+            </div>
+        </div>
+        <div class="right3">
+            <div class="rig_left shadow">
+                <!-- 边框 -->
+                <div class="b2"></div>
+                <div class="b3"></div>
+                <div class="b4"></div>
+                <div class="b5"></div>
+                <p class="f1">设备监控数据</p>
+                <!-- <div class="box3_con" id="box3"></div> -->
+                <div class="temperature" id="box1">
+
+                </div>
+               <p class="temperature-t">温度</p>
+                <div class="speed" id="box2">
+
+                </div>
+                <p class="speed-s">转速</p>
+            </div>
+            <div class="rig_rig">
+                <div class="rig_top shadow">
+                    <!-- 边框 -->
+                    <div class="b2"></div>
+                    <div class="b3"></div>
+                    <div class="b4"></div>
+                    <div class="b5"></div>
+                    <p class="f1">设备失效概率预测</p>
+                        <button class="btn btn-sm btn-info ">返回</button>
+                    <div class="box3_con" id="box3"></div>
+                </div>
+                <div class="rig_bottom shadow">
+                    <!-- 边框 -->
+                    <div class="b2"></div>
+                    <div class="b3"></div>
+                    <div class="b4"></div>
+                    <div class="b5"></div>
+                    <p class="f1">设备剩余使用寿命预测（RUL）</p>
+                    <div class="box4_con" id="box4">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    <!--图表JS文件-->
+    <script type="text/javascript" src="static/js/echarts.min.js"></script>
+    <script type="text/javascript" src="static/js/ecStat.min.js"></script>
+    <script type="text/javascript" src="static/js/WSNRTConnect.js"></script>
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/box12.js"></script>
+    <script type="text/javascript" src="static/js/box3.js"></script>
+    <script type="text/javascript" src="static/js/box4.js"></script>
+</body>
+
+</html>

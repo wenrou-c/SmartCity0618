@@ -1,0 +1,244 @@
+body {
+    font-family: "微软雅黑";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: #fff;
+    --c0: #070f4a;
+    --c1:#00ffff;
+    --c2: #0a4193;
+
+}
+
+li {
+    list-style: disc;
+    /* display: inline-block; */
+}
+
+a {
+    color: var(--white);
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+button {
+    outline: none !important;
+}
+
+
+/* common */
+.flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-sc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-ec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-st {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* warp  */
+.warp {
+    min-width: 1000px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c0);
+    background-image: url(../img/bg.png);
+    background-size: 100% 100%;
+}
+
+
+/* content */
+.content {
+    width: 100%;
+    height: 97vh;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.main>.row>.col-xs-6 {
+    padding: 5px 10px;
+    height: 60vh;
+}
+
+.dialBlock {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--c2) inset;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+
+.controlBlock {
+    width: 48%;
+    height: 23vh;
+    margin: 0px 1% 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    box-shadow: 0 0 20px var(--c2) inset;
+}
+.controlBlock1 {
+    width: 98%;
+    height: 23vh;
+    box-shadow: 0 0 20px var(--c2) inset;
+    border-radius: 5px;
+    padding:5px 10px;
+    margin: 5px 1%;
+}
+
+.dialBlock .top {
+    /* width: 100%; */
+    height: 40px;
+}
+
+.dialBlock .info {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.top .left,
+.top .right {
+    height: 40px;
+}
+
+.top .left {
+    /* font-size: 2vh; */
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.top .btn-info {
+    background: transparent !important;
+}
+
+.top .btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}
+
+.page2 .dialBlock {
+    background: rgba(13, 48, 114, 0.3);
+}
+
+/* scroll  */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: var(--c2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c5);
+    background-clip: padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+.control_img {
+    width: 3vw;
+    height: 10vh;
+    margin: auto;
+}
+
+.control_img img {
+    width: 100%;
+}
+.info .speech{
+    height: 26vh;
+    margin-bottom: 10px;
+    color:var(--c1);
+    font-size: 2vw;
+}
+
+.order li{
+    margin-top:10px;
+}
+
+.btn2 {
+    margin: 0 20px;
+}
+.record ,.playback{
+    height: 15vh;
+}
+/* 对角线 */
+.boxpart::before,
+.boxpart::after{
+    position: absolute;
+    top:0;
+    width: 1rem;
+    height: 1rem;
+    content:"";
+    border-top:2px solid var(--c1);
+
+}
+.boxpart::before,
+.boxfooter::before{
+    border-left: 2px solid var(--c1);
+    left: 0;
+}
+.boxpart::after,
+.boxfooter::after{
+    border-right: 2px solid var(--c1);
+    right: 0;
+}
+.boxfooter{
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+}
+.boxfooter::before,
+.boxfooter::after{
+    position: absolute;
+    bottom:0;
+    width: 1rem;
+    height: 1rem;
+    content:"";
+    border-bottom:2px solid var(--c1);
+}

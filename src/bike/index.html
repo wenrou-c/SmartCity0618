@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共享单车系统</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/getscript?v=2.0&ak=HmpZ9dhTaCQUGgNVMdFFfZzscXAWyMay"></script>
+
+</head>
+
+<body>
+    <div class="warp">
+        <div class="container-fluid flex-cc">
+            <div class="mapBox">
+                <div class="titImg1">车辆位置</div>
+                <div class="map" id="map"></div>
+            </div>
+
+            <div class="carDetai flex-lc">
+                <div class="carNum">
+                    <div class="titImg2">车辆信息</div>
+                    <div class="abnormal">
+                        <div class="all ofl">
+                    <table class='abnormalTb' width="100%" style="border-collapse:separate; border-spacing:0px 2px;">
+                        <thead>
+                            <th width="20%">总数量</th>
+                            <th width="20%">使用中</th>
+                            <th width="20%">待预约</th>
+                            <th width="20%">故障</th>
+                            <th width="20%">单位</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>686</td>
+                                <td>232</td>
+                                <td>444</td>
+                                <td>10</td>
+                                <td>(辆)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+                <div class="carLog">
+                    <div class="titImg2">用户详情</div>
+                    <div class="abnormal">
+                        <div class="all ofl">
+                            <table class='abnormalTb' width="100%" style="border-collapse:separate; border-spacing:0px 2px;">
+                                <thead>
+                                    <th width="30%">用户ID</th>
+                                    <th width="40%">描述</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>XX</td>
+                                        <td>10分钟前XX用户借用了车。</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XX</td>
+                                        <td>5分钟前XX用户归还了车。</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XX</td>
+                                        <td>2分钟前XX用户归还了车。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js文件 -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/map.js"></script>
+</body>
+
+</html>

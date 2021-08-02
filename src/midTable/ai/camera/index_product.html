@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IwsPlat</title>
+    <!-- 20201125 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="warp" id="warp">
+
+        <!-- 内容 -->
+        <div class="content">
+
+            <!-- 2 -->
+            <div class="main page2">
+                <div class="dialBlock">
+                    <div class="top">
+                        <div class="col-xs-6 left" id="title">产品缺陷检测</div>
+                        <div class="col-xs-6 right flex-ec">
+                            <button class="btn btn-sm btn-info ">返回</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="hCamera row">
+                            <div class="col-xs-4 text_description">
+                                <div class="row ">
+                                    <p>介绍：</p>
+                                    <p class="ainfo"> 基于Tensorflow框架训练MobileNet-SSD网络，并利用OpenCV的DNN库进行加速，从而实现缺陷检测。MobileNet-SSD从Conv0到Conv13的配置与MobileNet v1模型是完全一致的，相当于只是去掉MobileNet v1最后的全局平均池化、全连接层和Softmax层，并在19×19，10×10，5×5，3×3，2×2，1×1的6种不同尺度的特征图上提取特征来做Detections。</p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p class="picture"><img src="img/defect.png" alt=""></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-8 flex-cc">
+                                <img id="img1" border="0" src="http://192.168.101.243:5000/video_feed_defect">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 库 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>

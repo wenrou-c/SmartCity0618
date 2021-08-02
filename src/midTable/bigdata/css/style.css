@@ -1,0 +1,475 @@
+﻿/* 初始化 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: electronicFont;
+	src: url(../font/DS-DIGIT.TTF)
+}
+
+body {
+	background: #011C27;
+	color: #666;
+	font-family: "微软雅黑";
+	overflow: hidden;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: none;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #399bff;
+}
+
+a.active,
+a:focus {
+	outline: none !important;
+	text-decoration: none;
+}
+
+
+a:hover {
+	color: #06c;
+	text-decoration: none !important
+}
+
+
+.clearfix:after,
+.clearfix:before {
+	display: table;
+	content: " "
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+.flex-ec {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+/*谷哥滚动条样式*/
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	position: absolute
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #5bc0de
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ddd
+}
+
+
+/* 加载效果 */
+.loading {
+	position: fixed;
+	left: 0;
+	top: 0;
+	font-size: 18px;
+	z-index: 100000000;
+	width: 100%;
+	height: 100%;
+	background: #1a1a1c;
+	text-align: center;
+}
+
+.loadbox {
+	position: absolute;
+	width: 160px;
+	height: 150px;
+	color: #aaa;
+	left: 50%;
+	top: 50%;
+	margin-top: -100px;
+	margin-left: -75px;
+}
+
+.loadbox img {
+	margin: 10px auto;
+	display: block;
+	width: 40px;
+}
+.allnav {
+	height: calc(100% - 30px);
+}
+/* 头部 */
+.header {
+	height: 10vh;
+	text-align: center;
+	background: url(../img/header.png) no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	z-index: 100;
+}
+
+.header h1 {
+	color: #00ffff;
+    margin: 0;
+    font-size: .4rem;
+    line-height: 9vh;
+    letter-spacing: .1rem;
+
+}
+/* 主要内容 */
+.main{
+	/* padding: .1rem .1rem 0rem .1rem; */
+}
+
+.main>ul>li {
+	float: left;
+	/* padding: 0 .1rem */
+}
+
+.main>ul>li {
+	width: 30%
+}
+
+.main>ul>li:nth-child(2) {
+	width: 40%;
+	padding: 0
+}
+/* 图表盒子 */
+.main>ul>li>.li_box {
+	height: 3.92rem;
+	border: 1px solid rgba(25, 186, 139, .17);
+	padding: .1rem .2rem .4rem .15rem;
+	position: relative;
+	margin-bottom: .15rem;
+	z-index: 10;
+}
+/* 盒子对角线 */
+.li_box:before,
+.li_box:after {
+	position: absolute;
+	width: .1rem;
+	height: .1rem;
+	content: "";
+	border-top: 2px solid #02a6b5;
+	top: 0;
+}
+
+.li_box:before,
+.boxfoot:before {
+	border-left: 2px solid #02a6b5;
+	left: 0;
+}
+
+.li_box:after,
+.boxfoot:after {
+	border-right: 2px solid #02a6b5;
+	right: 0;
+}
+
+
+.boxfoot {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.boxfoot:before,
+.boxfoot:after {
+	position: absolute;
+	width: .1rem;
+	height: .1rem;
+	content: "";
+	border-bottom: 2px solid #02a6b5;
+	bottom: 0;
+}
+/* 各地区标题 */
+.alltitle {
+	font-size: .2rem;
+	color: #fff;
+	text-align: center;
+	line-height: .5rem;
+}
+/* 总能耗数据 */
+.num {
+	background: rgba(101, 132, 226, .1);
+	padding: 0 .15rem 0.15rem;
+}
+
+.numbox li,
+.numbox2 li {
+	width: 50%;
+	text-align: center;
+	position: relative;
+	z-index: 100;
+}
+.numbox {
+	border: 1px solid rgba(25, 186, 139, .17);
+	position: relative;
+}
+
+.numbox li {
+	font-size: .55rem;
+	color: #27D08A;
+	padding: .05rem 0;
+	font-family: electronicFont;
+	font-weight: bold;
+}
+
+.numbox2 ul {
+	position: relative;
+}
+
+.numbox2 li {
+	font-size: .19rem;
+	color: rgba(255, 255, 255, .7);
+	padding-top: .1rem;
+}
+.area_total {
+	display: block;
+	font-size:  0.19rem;
+	font-weight: bold;
+	color: #27D08A;
+	position: absolute;
+	padding-top:0.1rem;
+	right: 0;
+	left: 0;
+	text-align: center;
+	z-index: 100;
+}
+/* 总能耗盒子对角线 */
+.numbox:before,
+.numbox:after {
+	position: absolute;
+	width: .3rem;
+	height: .1rem;
+	content: "";
+}
+
+.numbox:before {
+	border-left: 2px solid #02a6b5;
+	left: 0;
+	border-top: 2px solid #02a6b5;
+}
+
+.numbox:after {
+	border-right: 2px solid #02a6b5;
+	right: 0;
+	bottom: 0;
+	border-bottom: 2px solid #02a6b5;
+}
+
+.numbox li:first-child:before {
+	position: absolute;
+	content: "";
+	height: 50%;
+	width: 1px;
+	background: rgba(255, 255, 255, .2);
+	right: 0;
+	top: 25%;
+}
+
+/* 地图 */
+.map {
+	position: relative;
+	z-index: 9;
+}
+
+.map1,
+.map2,
+.map3 {
+	position: absolute;
+	opacity: .5
+}
+
+.map1 {
+	width: 6.43rem;
+	z-index: 2;
+	left: .7rem;
+	animation: myfirst2 15s infinite linear;
+}
+
+.map2 {
+	width: 5.66rem;
+	top: .4rem;
+	left: 1.2rem;
+	z-index: 3;
+	opacity: 0.2;
+	animation: myfirst 10s infinite linear;
+}
+
+.map3 {
+	width: 5.18rem;
+	top: .62rem;
+	left: 1.4rem;
+	z-index: 1;
+}
+.map4 {
+	width: 100%;
+	height: 7rem;
+	position: relative;
+	left: 0;
+	top: 4%;
+	margin-top: .2rem;
+	z-index: 5;
+}
+/* 地图背景动画 */
+@keyframes myfirst2 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes myfirst {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(-359deg);
+	}
+}
+/* 按钮 */
+
+.btn-info {
+	background: transparent !important;
+}
+
+.btn-info:active {
+	box-shadow: 0 0 10px #46b8da;
+}
+.btn{
+	font-size: 10px !important;
+}
+input,
+button {
+	outline: none !important;
+}
+
+.top {
+	height: 42px;
+}
+#energy_set:hover {
+	color: #00ffff;
+}
+
+#temp_set:hover {
+	color: #00ffff;
+}
+
+/* 日期 */
+.option_item {
+	width: 80px !important;
+	height: 22px;
+	color: #666 !important;
+	font-size: 12px !important;
+}
+.select_date{
+	width: 60px;
+	height: 22px;
+	color: #666;
+}
+
+input-text {
+	position: relative;
+	border: 1px solid #888;
+	border-radius: 3px;
+	font-size: 1em;
+	line-height: 31px;
+	height: 37px;
+	width: 22%;
+	text-align: right;
+	margin: 5px 5px 5px 2px;
+	padding-right: 4px;
+	color: #888;
+}
+
+.calender {
+	color: #fff;
+	font-size: 12px;
+}
+.select {
+	color: #00ffff;
+}
+
+/* 阈值窗口 */
+.mode-text {
+	width: 18vw;
+	padding: 20px;
+	margin: 5vh auto;
+	background-color: #eee;
+	border-radius: 5px;
+	position: relative;
+}
+
+.mode-text:after {
+	content: '▲';
+	color: #eee;
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	left: .5vw;
+	right: auto;
+	top: -15px;
+	transition: all .3s;
+}
+
+.mode-right:after {
+	left: 15.5vw !important;
+}
+
+.modal-body {
+	font-size: 14px;
+}
+/* 延时弹出小框 */
+#toast {
+    z-index: 1041;
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    opacity: 0;
+    transform: translateX(-50%);
+    font-size: 1.2vw;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    color: #f1f1e8;
+    transition: all ease-in-out 0.15s;
+    background: #153746;
+    border: 1px solid #0E2341;
+    box-shadow: 0px 3px 10px rgba(16, 151, 186, 0.5) inset;
+    pointer-events: none;
+}
+
+.toast_show {
+    bottom: 4rem !important;
+    opacity: 1 !important;
+}
+
+
+
+
+
+
+

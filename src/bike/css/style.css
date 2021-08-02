@@ -1,0 +1,107 @@
+
+/* common */
+body { 
+  --c0:#ffffff;
+  --c1:#00fcff; /* 管网图标颜色 */
+  --c2:#01d3d7; 
+  --c3:#447394;/* 滚动条颜色 */
+  --c4:#00e7fd;/* 字体和图标颜色 */
+  --c5:#78cbe7;/* title渐变色 */
+  --c6:#b2b4ba;/* 浅色字体颜色 */
+  --c7:#c6d9de;/* 二级导航颜色 */
+  --c8:#247398;/* 圆圈背景色 */
+  --c9:#eb2430;
+  font-family: '微软雅黑';box-sizing: border-box;
+}
+li { list-style: none; }
+button{outline: none !important;}
+.red{color: var(--c9) !important;}
+/* flex */
+.flex-lc { display: flex;justify-content: center;flex-direction: column; }
+.flex-cc { display: flex;justify-content: center;align-items: center; }
+.flex-ec { display: flex;justify-content: flex-end;align-items: center; }
+.flex-es { display: flex;justify-content: flex-end;align-items: flex-start;flex-direction: column; }
+.flex-ee { display: flex;justify-content: flex-end;align-items: flex-end;flex-direction: column; }
+.flex-st { display: flex;justify-content: flex-start;align-items: center; }
+.flex-se { display: flex;justify-content: flex-start;align-items: flex-end; }
+.flex-sb { display: flex;justify-content: space-between;align-items: center; }
+.flex-sc { display: flex;justify-content: space-around;justify-content: space-evenly;align-items: center;flex-direction: column; }
+
+/* body  */
+body,html,.warp,.container-fluid { width: 100%;height: 100%;overflow: hidden; }
+.all { width: 100%;height: 100%; }
+.iconfont,img { user-select: none;-webkit-user-drag: none; }
+.container-fluid { padding:0;position: relative; background-color: #04222d; }
+.mapBox{
+  width: 75%;
+  height: 100%;
+  background: url(../img/a3.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 4% 3% 3% 2%;
+}
+.map {
+  width: 100%;
+  height: 100%;
+
+}
+.titImg1{
+  width: 14%;
+  height: 10%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../img/a1.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 8vh;
+  color:var(--c4);
+  font-size: 1.2vw;
+}
+.titImg2{
+  width: 38%;
+  height: 14%;
+  position: absolute;
+  left: 1%;
+  top: 1%;
+  background: url(../img/a1.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 5vh;
+  color: var(--c4);
+}
+.carDetai{
+  width: 25%;
+  height: 100%;
+}
+.carNum ,.carLog{
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: url(../img/a2.png)  no-repeat;
+  background-size: 100% 100%;
+}
+.abnormal{
+  padding: 13% 5% 0 2%;
+  height: 93%;
+}
+.abnormalTb {
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+.abnormalTb th {
+    text-align: center;
+    color: var(--c4);
+}
+
+.ofl{
+  overflow: auto;
+}
+.abnormalTb tbody tr td {
+  padding: 6px;
+  color: var(--c2);
+  font-size: 0.8vw;
+}
+.abnormalTb tbody tr {
+  box-shadow: 0px 0px 5px var(--c1) inset;
+}

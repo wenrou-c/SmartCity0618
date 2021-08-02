@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IwsPlat</title>
+    <!-- 20201125 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/recorder.js"></script>
+    <!-- wavesurfer.js -->
+    <script src="js/wavesurfer.js"></script>
+    <!-- microphone plugin -->
+    <script src="js/wavesurfer.microphone.js"></script>
+    <script src="js/WSNRTConnect.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="warp" id="warp">
+        <!-- 内容 -->
+        <div class="content">
+            <!-- 2 -->
+            <div class="main page2">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="dialBlock">
+                            <div class="top row">
+                                <div class="col-xs-5 left">智能控制区</div>
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="col-xs-6 controlBlock boxpart">
+                                        <div class="top row">
+                                            <div class="col-xs-6 left">风扇</div>
+                                            <div class="col-xs-6 right flex-ec">
+                                                <button class="btn btn-sm btn-info " id="fan-state">OFF</button>
+                                            </div>
+                                        </div>
+                                        <div class="control_img"> 
+                                            <img src="img/fan_off.png" alt="" name="fan">
+                                        </div>
+                                        <div class="boxfooter"></div>
+                                    </div>
+                                    <div class="col-xs-6 controlBlock boxpart">
+                                        <div class="top row">
+                                            <div class="col-xs-6 left">滑台</div>
+                                            <div class="col-xs-6 right flex-ec">
+                                                <button class="btn btn-sm btn-info " id="slide-state">OFF</button>
+                                            </div>
+                                        </div>
+                                        <div class="control_img flex-ec" style="width: 10vw;"> 
+                                            <img src="img/slide_off.png" alt="" name="slide"> 
+                                        </div>
+                                        <div class="boxfooter"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 controlBlock1 boxpart">
+                                        <div class="top row">
+                                            <div class="col-xs-6 left">传送带</div>
+                                            <div class="col-xs-6 right flex-ec">
+                                                <button class="btn btn-sm btn-info" id="belt-state">OFF</button>
+                                            </div>
+                                        </div>
+                                        <div class="control_img" style="width: 40vw;"> 
+                                            <img src="img/relay_off.png" alt="" name="belt">
+                                        </div>
+                                        <div class="boxfooter"></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="dialBlock">
+                            <div class="top row">
+                                <div class="col-xs-6 left">语音识别</div>
+                                <div class="col-xs-6 right flex-ec">
+                                    <button class="btn btn-sm btn-info" id="backHome">返回</button>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="col-xs-12 dialBlock speech flex-cc" id="yysb_result"> </div>
+                                  <ul class="order">
+                                      <li>请说出控制指令：打开风扇、关闭风扇、打开滑台、关闭滑台、打开传送带、关闭传送带</li>
+                                      <li>请说出查询指令：当前温度多少、当前湿度多少、当前光强多少、当前大气压力多少</li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6" style="height: 36vh;">
+                        <div class="dialBlock">
+                            <div class="top row">
+                                <div class="col-xs-6 left">录音声纹</div>
+                                <div class="col-xs-6 right flex-ec">
+                                    <button class="btn btn-sm btn-info btn2"  onclick="startRecording(this)">开始</button>
+                                    <button class="btn btn-sm btn-info" onclick="stopRecording(this)" disabled>停止</button>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="col-xs-12  record" id="yysb_audio_waveform"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6"  style="height: 36vh;">
+                        <div class="dialBlock">
+                            <div class="top row">
+                                <div class="col-xs-5 left">放音声纹</div>
+                                <div class="col-xs-7 right flex-ec">
+                                    <button class="btn btn-sm btn-info btn2"  onclick="play_wavesurfer.play()">开始</button>
+                                    <button class="btn btn-sm btn-info"  onclick="play_wavesurfer.pause()">停止</button>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="col-xs-12  playback"  id="yysb_audio_waveform2"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div style="display: none;">
+                    <span>温度</span><span id="id_temp">0</span>℃ <span>湿度</span><span id="id_humi">0</span>% <span>光强</span><span id="id_illum">0</span>Lux <span>空气质量</span><span id="id_air">0</span> <span>气压</span><span id="id_pressure">0</span>hPa
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
+
+</html>

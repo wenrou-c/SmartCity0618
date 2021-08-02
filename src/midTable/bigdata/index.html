@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>index</title>
+  <!-- css库 -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery.nstSlider.css">
+  <!-- 主css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- js库 -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.nstSlider.min.js"></script>
+  <script type="text/javascript" src="js/laydate/laydate.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- 头部 -->
+  <!-- <div class="header">
+    <h1>数据可视化系统</h1>
+  </div> -->
+  <!-- 主要内容 -->
+  <div class="main">
+    <ul class="clearfix">
+      <!-- left -->
+      <li>
+        <div class="li_box">
+          <div class="top">
+            <div class="col-xs-4 left" style="padding-left:0 ;padding-right:0 ;">
+              <button class="btn btn-info" data-toggle="modal" data-target="#valuemodal" id="energy_set">能耗</button>
+              <button class="btn btn-info" data-toggle="modal" data-target="#valuemodal2" id="temp_set">温度 </button>
+            </div>
+            <div class="col-xs-2" style="text-align: center;padding-right:0 ;">
+              <button type="button" class="btn btn-info mapClickName" data-toggle="tooltip" data-placement="top"
+                title="">
+                武汉
+              </button>
+            </div>
+            <div class="right flex-ec calender">
+              <!-- 日期： -->
+              <select id="dateSelect" class="select_date">
+                <option value="0">年</option>
+                <option value="1">月</option>
+                <option value="2" selected>日</option>
+              </select>
+              <input type="text" class="laydate-icon option_item" style="display: none;" id="laydateYearId">
+              <input type="text" class="laydate-icon option_item" style="display: none" id="laydateMonthId">
+              <input type="text" class="laydate-icon option_item" id="laydateDateId">
+            </div>
+
+          </div>
+          <div class="allnav" id="echart1"></div>
+          <div class="boxfoot"></div>
+        </div>
+        <!-- 图表-2 -->
+        <div class="li_box">
+          <div class="alltitle">2018年各地区异常能耗百分比</div>
+          <div class="allnav" id="echart2"></div>
+          <div class="boxfoot"></div>
+        </div>
+
+      </li>
+      <!-- center -->
+      <li>
+        <div class="num">
+          <div class="numbox">
+            <ul class="clearfix">
+              <li class="left counter">32591189</li>
+              <li class="left counter">6912410</li>
+            </ul>
+          </div>
+          <div class="numbox2">
+            <ul class="clearfix">
+              <li class="left">2018年总能耗情况 </li>
+              <li class="left">2019年总能耗情况</li>
+              <span class="area_total">武汉</span>
+            </ul>
+          </div>
+        </div>
+        <!-- 中国地图 -->
+        <div class="map">
+          <div class="map1"><img src="img/1.png"></div>
+          <div class="map2"><img src="img/2.png"></div>
+          <div class="map3"><img src="img/3.png"></div>
+          <div class="map4" id="mapBox"></div>
+        </div>
+      </li>
+      <!-- right -->
+      <li>
+        <!-- 图表-3 -->
+        <div class="li_box">
+          <div class="top">
+            <div class="alltitle col-xs-9">预测未来显示区</div>
+            <div class="col-xs-3" style="text-align: center;padding-right:0 ;">
+              <button type="button" class="btn btn-info mapClickName" data-toggle="tooltip" data-placement="top"
+                title="武汉地区的能耗及温度情况">
+                武汉
+              </button>
+            </div>
+            <!-- <div class="col-xs-4 flex-ec right" style="padding-right:0">
+              <a href="http://192.168.10.201:8080 " target="_blank">
+                <button class="btn btn-info">后台管理</button>
+              </a>
+            </div> -->
+          </div>
+          <div class="allnav" id="echart3"></div>
+          <div class="boxfoot"></div>
+        </div>
+        <!-- 图表-4 -->
+        <div class="li_box">
+          <div class="alltitle">2018年各地区总能耗</div>
+          <div class="allnav" id="echart4"></div>
+          <div class="boxfoot"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!--能耗阈值设置窗口-->
+  <div class="modal fade thresholdModal" id="valuemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="width: 34vw;">
+      <div class="modal-content modal-contents">
+        <div class="modal-body">
+          <div class="panel panel-default panel-height ">
+            <div class="panel-heading">能耗阈值</div>
+            <div id="alimenergy" style="display: none;"></div>
+            <div class="panel-body">
+              <div class="nstSlider" id="nstSliderS" data-range_min="0" data-range_max="100" data-cur_min="100"
+                data-cur_max="0">
+                <div class="bar" id="barS"></div>
+                <div class="leftGrip" id="leftGripS"></div>
+                <div class="leftLabel nstSlider-val" id="leftLabelS" style="color:#666"></div>
+                <div class="rightLabel nstSlider-val" id="rightLabelS" style="color:#666"></div>
+              </div>
+              <div class="mode-text" style="color:#666">
+                <span id="mode-txt-3"><b>设置能耗上限</b>：超出阈值将出现红色预警。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 温度阈值设置窗口 -->
+  <div class="modal fade thresholdModal" id="valuemodal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="width: 34vw;">
+      <div class="modal-content modal-contents">
+        <div class="modal-body">
+          <div class="panel panel-default panel-height ">
+            <div class="panel-heading">温度阈值</div>
+            <div id="alimtemp" style="display: none;"></div>
+            <div class="panel-body">
+              <div class="nstSlider" id="nstSliderS2" data-range_min="0" data-range_max="100" data-cur_min="100"
+                data-cur_max="0">
+                <div class="bar" id="barS2"></div>
+                <div class="leftGrip" id="leftGripS2"></div>
+                <div class="leftLabel nstSlider-val" id="leftLabelS2" style="color:#666"></div>
+                <div class="rightLabel nstSlider-val" id="rightLabelS2" style="color:#666"></div>
+              </div>
+              <div class="mode-text" style="color:#666">
+                <span id="mode-txt-3"><b>设置温度上限</b>：超出阈值将出现红色预警。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--加载效果 -->
+  <div class="loading">
+    <div class="loadbox"> <img src="img/loading.gif"> 页面加载中... </div>
+  </div>
+     <!--延时弹出小框-->
+     <div id="toast">
+      <span id="toast_txt">
+      </span>
+  </div>
+  <!-- js库 -->
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script type="text/javascript" src="js/china.js"></script>
+  <script src="js/moment.min.js"></script>
+  <!-- 主js -->
+  <script type="text/javascript" src="js/script.js"></script>
+  <!-- 地图配置 -->
+  <script type="text/javascript" src="js/map.js"></script>
+  
+
+</body>
+
+</html>

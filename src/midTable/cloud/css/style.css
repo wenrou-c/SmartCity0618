@@ -1,0 +1,84 @@
+body {
+    font-family: "微软雅黑";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: #fff;
+    /* --c0: #070f4a;
+    --c1: #0a4193; */
+
+    --c0: #021825;
+    --c1: #021825;
+}
+
+a {
+    color: var(--white);
+}
+
+button {
+    outline: none !important;
+}
+
+.c0 {
+    background-color: #d9d6d6;
+}
+
+.flex-ec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* warp  */
+.warp {
+    min-width: 1000px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c0);
+}
+
+/* content */
+.content {
+    width: 100%;
+    height: 97vh;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.dialBlock {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--c1) inset;
+    border-radius: 5px;
+    /* padding: 0 20px; */
+}
+
+.dialBlock .top {
+    width: 100%;
+    height: 60px;
+}
+
+.dialBlock .info {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.top .right {
+    height: 60px;
+}
+
+.top .btn-info {
+    background: transparent !important;
+}
+
+.top .btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}

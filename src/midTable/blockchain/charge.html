@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>充电桩</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N"></script>
+    <script src="js/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="warp" id="app">
+        <div class="content">
+            <div class="main">
+                <div class="dialBlock">
+                    <div class="top">
+                        <p class="col-xs-8 left" style="font-size: 16px;">基于区块链的共享充电桩管理系统>充电桩分布图</p>
+                        <div class="col-xs-4 flex-ec right" style="padding-right:1px;">
+                            <button class="btn btn-sm btn-info back_home">返回</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <!-- 百度地图 -->
+                        <div id="container" class="col-xs-6 baidumap"></div>
+                        <!-- 充电桩详情 -->
+                        <div class="col-xs-6 right charge_detail">
+                            <form>
+                                <div class="form-group row" v-for="item in chargeDetail" v-if="item.show">
+                                    <label class="col-xs-3 col-form-label">{{item.itemName}}</label>
+                                    <div class="col-xs-9">
+                                        <input type="text" class="form-control" :value="item.itemValue">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 充电记录 -->
+                    <label class="col-xs-8 left">充电记录：</label>
+                    <div class="col-xs-12">
+                        <table width="100%" border="2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>序号</td>
+                                <td>车牌号</td>
+                                <td>充电起止时间</td>
+                                <td>充电时长（小时）</td>
+                                <td>额定功率（Kw）</td>
+                                <td>计费单价（元/Kw*时）</td>
+                                <td>计费总额（元）</td>
+                                <td>计费状态</td>
+                            </tr>
+                            <tr v-for="item in chargeRecord">
+                                <td>{{item.item1}}</td>
+                                <td>{{item.item2}}</td>
+                                <td>{{item.item3}}</td>
+                                <td>{{item.item4}}</td>
+                                <td>{{item.item5}}</td>
+                                <td>{{item.item6}}</td>
+                                <td>{{item.item7}}</td>
+                                <td>{{item.item8}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <!-- 页码 -->
+                    <div class="col-xs-12 ">
+                        <div class="col-xs-6" style="margin-top:20px;">
+                            显示第 1 到第 5 条记录，总共 20 条记录
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination col-xs-6 flex-ec">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            chargeDetail: [
+                {
+                    itemName: '单价：',
+                    itemValue: '1.06元/kw',
+                    show: true
+                }, {
+                    itemName: '充电桩编号：',
+                    itemValue: 'WH-01-1009',
+                    show: true
+                }, {
+                    itemName: '设备地址：',
+                    itemValue: '湖北省武汉市东湖高新大学园路',
+                    show: true
+                }, {
+                    itemName: '运营商：',
+                    itemValue: '国家电网武汉分公司',
+                    show: true
+                }, {
+                    itemName: '设备型号：',
+                    itemValue: 'A-10087',
+                    show: true
+                }, {
+                    itemName: '安装日期：',
+                    itemValue: '2020/10/23',
+                    show: true
+                }, {
+                    itemName: '运行状态：',
+                    itemValue: '正常',
+                    show: true
+                },
+
+            ],
+            chargeRecord: [
+                {
+                    item1: '1',
+                    item2: '鄂A-BC0090',
+                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                    item4: 9,
+                    item5: 12.5,
+                    item6: 3.5,
+                    item7: 30.5,
+                    item8: '已收费',
+                },
+                {
+                    item1: '2',
+                    item2: '鄂A-BC0090',
+                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                    item4: 9,
+                    item5: 12.5,
+                    item6: 3.5,
+                    item7: 30.5,
+                    item8: '已收费',
+                },
+                {
+                    item1: '3',
+                    item2: '鄂A-BC0090',
+                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                    item4: 9,
+                    item5: 12.5,
+                    item6: 3.5,
+                    item7: 30.5,
+                    item8: '已收费',
+                }
+            ],
+            //地图信息
+            dataArrayMap: [
+                {
+                    lng: 114.406,
+                    lat: 30.462,
+                    power_pole_id: '1',
+                },
+                {
+                    lng: 114.417,
+                    lat: 30.482,
+                    power_pole_id: '2',
+                },
+                {
+                    lng: 114.416,
+                    lat: 30.496,
+                    power_pole_id: '3',
+                },
+            ],
+            // 充电桩信息
+            infoCharge: {
+                price: '1.06元/kw',
+                code: 'WH-01-1009',
+                address: '湖北省武汉市东湖开发区大学园路光谷所充电站',
+                operator: '国家电网武汉分公司',
+                type: 'A-10087',
+                date: '2020/10/23',
+                state: '正常',
+            },
+
+        },
+        created() {
+            //重新获取地图列表
+            this.getMapList()
+        },
+        mounted() {
+            this.creatMap()
+        },
+        methods: {
+            //获取地图列表
+            getMapList() {
+                var _this = this
+                $.ajax({
+                    url: 'http://192.168.10.200:5001/API/query-power-info-location/',
+                    method: 'GET',
+                    async: false,
+                    dataType: 'json',
+                    success(res) {
+                        //循环遍历充电桩信息
+                        console.log(res.results.length);
+                        for (var i = 0; i < res.results.length; i++) {
+                            console.log(res.results[i]);
+                            var dataArrayLng = res.results[i].x_coord
+                            var dataArrayLat = res.results[i].y_coord
+                            var power_pole_id = res.results[i].power_pole_id
+                            console.log(dataArrayLng, dataArrayLat);
+                            //把需要的充电桩信息放入数组
+                            _this.dataArrayMap.push({
+                                lng: dataArrayLng,
+                                lat: dataArrayLat,
+                                power_pole_id: power_pole_id,
+                            })
+                        }
+                        console.log(_this.dataArrayMap);
+
+                    },
+                    error(error) {
+                        console.log(error);
+                    }
+                })
+            },
+            creatMap() {
+                var _this = this
+                //创建标注点并添加到地图中
+                function addMarker(dataArrayMap) {
+                    //循环建立标注点
+                    for (var i = 0, dataArrayMapLen = dataArrayMap.length; i < dataArrayMapLen; i++) {
+                        //创建充电桩图标
+                        var myIcon = new BMap.Icon("img/charge_icon.png", new BMap.Size(42, 42));
+                        // 创建Marker标注，使用充电桩图标
+                        var pt = new BMap.Point(dataArrayMap[i].lng, dataArrayMap[i].lat);
+                        var marker = new BMap.Marker(pt, {
+                            icon: myIcon
+                        });
+                        map.addOverlay(marker);  //将标注点添加到地图上
+                        // marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                        //添加监听事件
+                        (function () {
+                            var thePoint = dataArrayMap[i];
+                            marker.addEventListener("click",
+                                function () {
+                                    //发送请求，获取充电桩信息
+                                    $.ajax({
+                                        url: 'http://192.168.10.200:5001/API/base-api/power-pole-info/' + thePoint.power_pole_id,
+                                        method: 'GET',
+                                        dataType: 'json',
+                                        success(res) {
+                                            // _this.show = true
+                                            _this.chargeDetail.map(item => {
+                                                if (item.itemName == '充电桩编号：') {
+                                                    item.itemValue = res.power_pole_code
+                                                    console.log(item.itemValue)
+                                                }
+                                                if (item.itemName == '设备地址：') {
+                                                    item.itemValue = res.address
+                                                }
+                                                if (item.itemName == '设备型号：') {
+                                                    item.itemValue = res.power_pole_type
+                                                }
+                                                if (item.itemName == '安装日期：') {
+                                                    item.itemValue = moment(res.install_time).format('YYYY-MM-DD HH:mm:ss')
+                                                }
+                                                if (item.itemName == '运行状态：') {
+                                                    item.itemValue = res.power_status
+                                                    res.power_status == 1
+                                                        ? (item.itemValue = '正常')
+                                                        : ( item.itemValue = '异常')
+                                                }
+                                            })
+                                            _this.chargeRecord = [
+                                                {
+                                                    item1: '1',
+                                                    item2: '鄂A-BC0099',
+                                                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                                                    item4: 9,
+                                                    item5: 12.5,
+                                                    item6: 3.5,
+                                                    item7: 30.5,
+                                                    item8: '已收费',
+                                                },
+                                                {
+                                                    item1: '2',
+                                                    item2: '鄂A-BC0000',
+                                                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                                                    item4: 9,
+                                                    item5: 12.5,
+                                                    item6: 3.5,
+                                                    item7: 30.5,
+                                                    item8: '已收费',
+                                                }
+                                            ]
+
+                                        },
+                                        timeout: 10000,
+                                        error(error) {
+                                            _this.chargeDetail = [
+                                                {
+                                                    itemName: '单价:',
+                                                    itemValue: '2.06'
+                                                },
+                                                {
+                                                    itemName: '充电桩编号:',
+                                                    itemValue: 'WH-01-1110' + Math.ceil(Math.random() * 10)
+                                                }, {
+                                                    itemName: '充电桩地址:',
+                                                    itemValue: '湖北省武汉市东湖高新大学园路2'
+                                                }, {
+                                                    itemName: '运营商:',
+                                                    itemValue: '国家电网武汉分公司2'
+                                                }, {
+                                                    itemName: '设备型号：',
+                                                    itemValue: 'A-100872'
+                                                }, {
+                                                    itemName: '安装日期：',
+                                                    itemValue: '2020/10/23'
+                                                }, {
+                                                    itemName: '运行状态：',
+                                                    itemValue: '正常'
+                                                }, {
+                                                    itemName: '累计收入：',
+                                                    itemValue: '71980.65'
+                                                },
+
+                                            ]
+                                            _this.chargeRecord = [
+                                                {
+                                                    item1: '1',
+                                                    item2: '鄂A-BC0099',
+                                                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                                                    item4: 9,
+                                                    item5: 12.5,
+                                                    item6: 3.5,
+                                                    item7: 30.5,
+                                                    item8: '已收费',
+                                                },
+                                                {
+                                                    item1: '2',
+                                                    item2: '鄂A-BC0000',
+                                                    item3: '2020/12/1 21:20:34 - 2020/12/2 06:15:00',
+                                                    item4: 9,
+                                                    item5: 12.5,
+                                                    item6: 3.5,
+                                                    item7: 30.5,
+                                                    item8: '已收费',
+                                                }
+                                            ]
+                                        }
+                                    })
+                                });
+                        })();
+                    }
+                }
+                function showInfo(thisMarker, point) {
+                    //获取点的信息
+                    var sContent =
+                        '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
+                        + '<li style="line-height: 26px;font-size: 15px;">'
+                        + '<span style="width: 50px;display: inline-block;">名称：</span>' + point.id + '</li>'
+                        + '<li style="line-height: 26px;font-size: 15px;">'
+                        + '<span style="width: 50px;display: inline-block;">地址：</span>' + point.name + '</li>'
+                        + '<li style="line-height: 26px;font-size: 15px;"><span style="width: 50px;display: inline-block;">查看：</span><a href="' + point.url + '">详情</a></li>'
+                        + '</ul>';
+                    var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
+                    thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
+                }
+
+                //创建地图
+                var map = new BMap.Map('container');
+                map.centerAndZoom(new BMap.Point(114.41, 30.473), 13);  // 设置中心点
+                map.setCurrentCity("东湖高新区");
+                map.addControl(new BMap.MapTypeControl());
+                map.enableScrollWheelZoom(true);
+                addMarker(this.dataArrayMap);
+            },
+
+        },
+    })
+</script>
+
+</html>

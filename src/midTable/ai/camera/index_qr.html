@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IwsPlat</title>
+    <!-- 20201125 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="warp" id="warp">
+
+        <!-- 内容 -->
+        <div class="content">
+
+            <!-- 2 -->
+            <div class="main page2">
+                <div class="dialBlock">
+                    <div class="top">
+                        <div class="col-xs-6 left" id="title">二维码识别</div>
+                        <div class="col-xs-6 right flex-ec">
+                            <button class="btn btn-sm btn-info ">返回</button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="hCamera row">
+                            <div class="col-xs-4 text_description">
+                                <div class="row ">
+                                    <p>介绍：</p>
+                                    <p class="ainfo">基于传统方法，使用OpenCV的qrDecoder库进行二维码识别。QR是“Quick Response”的缩写,它指的就是可以对隐藏在二维码中的数据实现快速读取。QR码之所以能够快速的普及，就是因为这项技术是开源的。也就是说每个人都可以使用。QR码相对传统条形码的优势是数据存储量大和高容错性。</p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p class="picture"><img src="img/qrbar.png" alt=""></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-8 flex-cc">
+                                <img id="img1" border="0" src="http://192.168.101.243:5000/video_feed_barcode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 库 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>

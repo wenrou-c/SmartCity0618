@@ -1,0 +1,207 @@
+body {
+    font-family: "微软雅黑";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: #fff;
+    --c0: #070f4a;
+    --c1: #081d60;
+    --c2: #0a4193;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    color: var(--white);
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+button {
+    outline: none !important;
+}
+
+
+/* common */
+.flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-sc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-ec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-st {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* warp  */
+.warp {
+    min-width: 1000px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c0);
+    background-image: url(../img/bg.png);
+    background-size: 100% 100%;
+}
+
+
+/* content */
+.content {
+    width: 100%;
+    height: 94vh;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    margin: 0;
+}
+
+.main>.row>.col-xs-6 {
+    padding: 10px;
+    height: 45vh;
+}
+
+.dialBlock {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--c2) inset;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+
+.dialBlock .top {
+    width: 100%;
+    height: 60px;
+}
+
+.dialBlock .info {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.top .left,
+.top .right {
+    height: 60px;
+}
+
+.top .left {
+    font-size: 3vh;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.top .btn-info {
+    background: transparent !important;
+}
+
+.top .btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}
+
+.page2 .dialBlock {
+    background: rgba(13, 48, 114, 0.3);
+}
+
+/* camera */
+.hCamera {
+    height: 98%;
+}
+
+.hCamera .col-xs-8,
+.hCamera .col-xs-4 {
+    height: 100%;
+}
+
+.hCamera .col-xs-8 {
+    /* background: rgba(13, 48, 114, 0.8); */
+    background: rgba(13, 48, 114, 0.3);
+}
+
+.text_description {
+    background: rgba(13, 48, 114, 1);
+}
+
+.text_description p {
+    /* border-bottom: 1px solid #045487; */
+    height: 6vh;
+    line-height: 6vh;
+}
+
+.ainfo {
+    font-size: 12px;
+    text-indent: 2em;
+}
+
+.picture {
+    margin-top: 10px;
+    text-align: center;
+}
+.picture img{
+    width: 70%;
+}
+
+#img1 {
+    width: 100%;
+    height: 100%;
+}
+
+/* scroll  */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: var(--c2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c5);
+    background-clip: padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}

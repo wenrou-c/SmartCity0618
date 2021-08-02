@@ -1,0 +1,271 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+        /* url('iconfont.woff2') format('woff2'), */
+        url('iconfont.woff') format('woff'),
+        url('iconfont.ttf') format('truetype'),
+        url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 46px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "微软雅黑";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    --white: #fff;
+    /* --c0: #070f4a;
+    --c1: #081d60;
+    --c2: #0a4193; */
+
+    --c0: #021825;
+    --c1: #021825;
+    --c2: #021825;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+button {
+    outline: none !important;
+}
+
+/* common */
+.flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-sc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-ec {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-st {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* warp  */
+.warp {
+    min-width: 1000px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c0);
+    background-image: url(../img/bg.png);
+    background-size: 100% 100%;
+}
+
+/* content */
+.content {
+    width: 100%;
+    height: 97vh;
+    overflow: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 97vh;
+}
+
+.btn {
+    font-size: 12px !important;
+}
+
+.dialBlock {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--c2) inset;
+    border-radius: 5px;
+    /* padding: 0 20px; */
+}
+
+.dialBlock .top {
+    width: 100%;
+    height: 60px;
+}
+
+.dialBlock .info {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.top .left,
+.top .right {
+    height: 60px;
+}
+
+.top .left {
+    font-size: 2vh;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.top .btn-info {
+    background: transparent !important;
+}
+
+.top .btn-info:active {
+    box-shadow: 0 0 10px #46b8da;
+}
+
+.row {
+    margin: 0;
+}
+
+#img1 {
+    width: 100%;
+    height: 100%;
+}
+
+/* scroll  */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+    background-color: var(--c2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c5);
+    background-clip: padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+/* 项目列表 */
+.itemUl>div {
+    height: 35vh;
+    text-indent: 2em;
+    box-shadow: 0px 0px 40px #197786 inset;
+    background-size: 100% 100%;
+    cursor: pointer;
+    border-top: 3px solid #01DAE2;
+}
+
+.itemUl>div {
+    transition: all .5s ease;
+}
+
+.itemUl>div .itemLi>span {
+    transition: all .5s ease;
+}
+.itemUl>div .itemLi{
+    width: 18vw;
+    height: 35vh;
+    
+}
+.itemUl>div .itemLi>p {
+    transition: all .5s ease;
+   
+}
+
+.itemUl>div:hover {
+    transform: scale(1.1);
+    background: #004550;
+    box-shadow: 0 9px 15px 0 rgba(7, 17, 27, .25);
+}
+
+.itemUl>div:hover span {
+    transform: scale(1.02);
+}
+
+.itemUl>div:hover p {
+    transform: scale(1.02);
+}
+
+.itemLi span {
+    color: #00ffff;
+}
+
+.itemLi .a_info {
+    color: #fff;
+    /* font-size: .8rem; */
+}
+
+.itemUl>div:hover span {
+    color: #00ffff;
+}
+
+.itemUl>div:hover p {
+    color: #00ffff;
+}
+
+/* 动画效果 */
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.col-xs-3 {
+    width: 20% !important;
+    margin: 16px;
+}
+.a_title{
+    font-size: 1.4vw;
+    color: #00ffff;
+}
